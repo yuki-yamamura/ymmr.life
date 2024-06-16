@@ -1,4 +1,5 @@
-import PostItem from "./";
+import PostItem from ".";
+import { fakePost } from "./__mock__/fixture";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -11,9 +12,6 @@ export default {
 
 export const Default: Story = {
   args: {
-    post: {
-      title: "Hello, World!",
-      body: "Some text here...",
-    },
+    post: fakePost,
   },
 };

@@ -1,8 +1,7 @@
+import type { Post } from "@/types/Post";
+
 type Props = {
-  post: {
-    title: string;
-    body: string;
-  };
+  post: Post;
 };
 
 const PostItem = ({ post }: Props) => {

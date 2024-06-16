@@ -1,10 +1,9 @@
 import PostItem from "./post-item";
 
+import type { Post } from "@/types/Post";
+
 type Props = {
-  posts: {
-    title: string;
-    body: string;
-  }[];
+  posts: Post[];
 };
 
 const PostList = ({ posts }: Props) => (
