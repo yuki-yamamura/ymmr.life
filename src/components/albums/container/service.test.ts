@@ -1,18 +1,18 @@
-import { afterEach, beforeEach, describe, test, expect, vi } from "vitest";
+import { describe, test, expect, beforeEach } from "vitest";
 import { fetchAlbums } from "./service";
 import { fakeAlbums } from "../__mock__/fixture";
+import { http, HttpResponse } from "msw";
+import { server } from "../../../mocks/node";
+
+const handler = http.get("https://jsonplaceholder.typicode.com/albums", () => {
+  return HttpResponse.json(fakeAlbums);
+});
+
+beforeEach(() => {
+  server.use(handler);
+});
 
 describe("fetchAlbums", () => {
-  beforeEach(() => {
-    vi.spyOn(global, "fetch").mockResolvedValue(
-      new Response(JSON.stringify(fakeAlbums))
-    );
-  });
-
-  afterEach(() => {
-    vi.resetAllMocks();
-  });
-
   test("should return a list of albums", async () => {
     // arrange
     const expected = fakeAlbums;
