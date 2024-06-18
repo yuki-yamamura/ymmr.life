@@ -1,4 +1,3 @@
-import { describe, test, expect, beforeEach } from "vitest";
 import { fetchAlbums } from "./service";
 import { fakeAlbums } from "../__mock__/fixture";
 import { http, HttpResponse } from "msw";
