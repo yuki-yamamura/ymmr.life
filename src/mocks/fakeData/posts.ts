@@ -1,6 +1,6 @@
 import type { Post } from "@/types/Post";
 
-export const fakePosts: Post[] = [
+export const posts: Post[] = [
   {
     title: "First post",
     body: "first...",

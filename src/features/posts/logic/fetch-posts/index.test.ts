@@ -1,14 +1,7 @@
-import { fetchPosts } from "./";
-import { fakeResponse } from "../__mock__/fixture";
-import { http, HttpResponse } from "msw";
+import { fetchPosts } from ".";
 import { server } from "@/mocks/node";
-
-const handler = http.get(
-  "https://service-domain.microcms.io/api/v1/posts",
-  () => {
-    return HttpResponse.json(fakeResponse);
-  }
-);
+import { fakeResponse } from "./__mock__/fixture";
+import { handler } from "./__mock__/handler";
 
 beforeEach(() => {
   server.use(handler);

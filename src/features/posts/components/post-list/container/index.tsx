@@ -1,5 +1,5 @@
+import { fetchPosts } from "@/features/posts/logic/fetch-posts";
 import Component from "../presenter";
-import { fetchPosts } from "./service";
 
 const Container = async () => {
   const posts = await fetchPosts();

@@ -2,7 +2,7 @@ import { expect, within } from "@storybook/test";
 import Component from ".";
 
 import type { Meta, StoryObj } from "@storybook/react";
-import { fakePosts } from "../__mock__/fixture";
+import { posts } from "@/mocks/fakeData/posts";
 
 type Story = StoryObj<typeof Component>;
 
@@ -15,7 +15,7 @@ export default meta;
 
 export const Default: Story = {
   args: {
-    posts: fakePosts,
+    posts,
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
