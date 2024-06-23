@@ -152,3 +152,9 @@ export const fakeResponses: MicroCMSListResponse<Post>[] = [
     offset: MICROCMS_DEFAULT_OFFSET * MICROCMS_DEFAULT_LIMIT * 2,
   },
 ];
+
+export const fakeResponse = {
+  id: "id",
+  title: "title",
+  body: "body",
+} as Post & MicroCMSContentId & MicroCMSDate;

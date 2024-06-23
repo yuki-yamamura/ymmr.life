@@ -1,9 +1,10 @@
 import { http, HttpResponse } from "msw";
-import { fakeResponses } from "./fixture";
+import { fakeResponse, fakeResponses } from "./fixture";
 
-export const handler = http.get(
-  "https://service-domain.microcms.io/api/v1/posts",
-  ({ request }) => {
+import type { HttpHandler } from "msw";
+
+export const handlers: HttpHandler[] = [
+  http.get("https://service-domain.microcms.io/api/v1/posts", ({ request }) => {
     const url = new URL(request.url);
     const offset = url.searchParams.get("offset");
 
@@ -21,5 +22,9 @@ export const handler = http.get(
         return HttpResponse.json({ status: 404 });
       }
     }
-  }
-);
+  }),
+
+  http.get("https://service-domain.microcms.io/api/v1/posts/id", () => {
+    return HttpResponse.json(fakeResponse);
+  }),
+];

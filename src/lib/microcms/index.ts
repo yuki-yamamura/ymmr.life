@@ -51,4 +51,13 @@ export class MicroCMSClient<T> {
 
     return res.contents.concat(nextResponse);
   };
+
+  fetchListDetailById = ({
+    id,
+  }: MicroCMSContentId): Promise<T & MicroCMSContentId & MicroCMSDate> => {
+    return client.getListDetail<T>({
+      endpoint: this.endpoint,
+      contentId: id,
+    });
+  };
 }
