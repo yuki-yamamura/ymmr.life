@@ -1,0 +1,3 @@
+export const MICROCMS_DEFAULT_LIMIT = 10;
+
+export const MICROCMS_DEFAULT_OFFSET = 0;
