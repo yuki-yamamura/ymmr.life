@@ -1,21 +1,10 @@
 import { Albums } from "@/components/albums";
-import { client } from "@/lib/microcms/client";
+import { PostList } from "@/components/post-list";
 
-export default async function Home() {
-  const data = await client.getList<{
-    title: string;
-    body: string;
-  }>({
-    endpoint: "posts",
-  });
-  const postTitles = data.contents.map((post) => post.title);
+export default function Home() {
   return (
     <>
-      <ul>
-        {postTitles.map((postTitle) => (
-          <li key={postTitle}>{postTitle}</li>
-        ))}
-      </ul>
+      <PostList />
       <hr className="my-4" />
       <Albums />
     </>
