@@ -1,13 +1,9 @@
 import { MICROCMS_DEFAULT_LIMIT, MICROCMS_DEFAULT_OFFSET } from "@/constants";
 
 import type { Post } from "@/types/Post";
-import type {
-  MicroCMSContentId,
-  MicroCMSDate,
-  MicroCMSListResponse,
-} from "microcms-js-sdk";
+import type { MicroCMSListResponse } from "microcms-js-sdk";
 
-export const fakePosts: Post[] = [
+export const fakePosts = [
   {
     title: "First post",
     body: "First post content...",
@@ -124,29 +120,23 @@ export const fakePosts: Post[] = [
     title: "Twenty-ninth post",
     body: "Twenty-ninth post content...",
   },
-];
+] as Post[];
 
 export const fakeResponses: MicroCMSListResponse<Post>[] = [
   {
-    contents: fakePosts.slice(0, 10) as (Post &
-      MicroCMSContentId &
-      MicroCMSDate)[],
+    contents: fakePosts.slice(0, 10),
     totalCount: 29,
     limit: MICROCMS_DEFAULT_LIMIT,
     offset: MICROCMS_DEFAULT_OFFSET,
   },
   {
-    contents: fakePosts.slice(10, 20) as (Post &
-      MicroCMSContentId &
-      MicroCMSDate)[],
+    contents: fakePosts.slice(10, 20),
     totalCount: 29,
     limit: MICROCMS_DEFAULT_LIMIT,
     offset: MICROCMS_DEFAULT_OFFSET + MICROCMS_DEFAULT_LIMIT,
   },
   {
-    contents: fakePosts.slice(20, 30) as (Post &
-      MicroCMSContentId &
-      MicroCMSDate)[],
+    contents: fakePosts.slice(20, 30),
     totalCount: 29,
     limit: MICROCMS_DEFAULT_LIMIT,
     offset: MICROCMS_DEFAULT_OFFSET * MICROCMS_DEFAULT_LIMIT * 2,
@@ -157,4 +147,4 @@ export const fakeResponse = {
   id: "id",
   title: "title",
   body: "body",
-} as Post & MicroCMSContentId & MicroCMSDate;
+} as Post;

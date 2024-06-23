@@ -5,6 +5,7 @@ import type {
   GetListRequest,
   MicroCMSContentId,
   MicroCMSDate,
+  MicroCMSListContent,
 } from "microcms-js-sdk";
 
 export const client = createClient({
@@ -12,7 +13,7 @@ export const client = createClient({
   apiKey: process.env.MICROCMS_API_KEY as string,
 });
 
-export class MicroCMSClient<T> {
+export class MicroCMSClient<T extends MicroCMSListContent> {
   private endpoint: string;
 
   constructor(endpoint: string) {
@@ -25,7 +26,7 @@ export class MicroCMSClient<T> {
         offset: MICROCMS_DEFAULT_OFFSET,
       },
     }
-  ): Promise<(T & MicroCMSContentId & MicroCMSDate)[]> => {
+  ): Promise<T[]> => {
     const res = await client.getList<T>({
       endpoint: this.endpoint,
       queries,
@@ -52,9 +53,7 @@ export class MicroCMSClient<T> {
     return res.contents.concat(nextResponse);
   };
 
-  fetchListDetailById = ({
-    id,
-  }: MicroCMSContentId): Promise<T & MicroCMSContentId & MicroCMSDate> => {
+  fetchListDetailById = ({ id }: MicroCMSContentId): Promise<T> => {
     return client.getListDetail<T>({
       endpoint: this.endpoint,
       contentId: id,
