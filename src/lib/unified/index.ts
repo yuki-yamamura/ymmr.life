@@ -1,5 +1,5 @@
 import React from "react";
-import rehypePrism from "rehype-prism";
+import rehypePrism from "rehype-prism-plus";
 import rehypeReact, { Options } from "rehype-react";
 import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
