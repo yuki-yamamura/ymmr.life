@@ -3,7 +3,7 @@ import { convertMarkdownIntoJSX } from "@/lib/unified";
 import { Post } from "@/types/Post";
 import { MicroCMSContentId } from "microcms-js-sdk";
 
-import "prism-themes/themes/prism-night-owl.min.css";
+import "prism-themes/themes/prism-duotone-light.min.css";
 
 type Params = MicroCMSContentId;
 
