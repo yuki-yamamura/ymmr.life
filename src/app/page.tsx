@@ -1,5 +1,7 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+
+import styles from "./page.module.scss";
+import { Button } from "@/components";
 
 export default function Home() {
   return (
@@ -14,6 +16,15 @@ export default function Home() {
           priority
         />
         <h1>Hello, World!</h1>
+        <ul className={styles["button-list"]}>
+          {["foo", "bar", "baz"].map((item, index) => (
+            <li key={item}>
+              <Button color={index % 2 === 0 ? "primary" : "secondary"}>
+                {item}
+              </Button>
+            </li>
+          ))}
+        </ul>
 
         <div className={styles.ctas}>
           <a
