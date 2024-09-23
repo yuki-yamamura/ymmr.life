@@ -1,14 +1,28 @@
 .module {
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  transition-duration: 300ms;
 }
 
 .primary {
   background-color: #007bff;
   color: #fff;
+  border: none;
+
+  &:hover {
+    background-color: #fff;
+    color: #007bff;
+    border: solid 1px #007bff;
+  }
 }
 
 .secondary {
   background-color: #fff;
   color: #007bff;
   border: 1px solid #007bff;
+
+  &:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
 }

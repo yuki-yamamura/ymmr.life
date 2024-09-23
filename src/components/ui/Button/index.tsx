@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority";
 
 import styles from "./index.module.scss";
-import { PropsWithChildren } from "react";
+import { HTMLAttributes, PropsWithChildren } from "react";
 
 const button = cva(styles.module, {
   variants: {
@@ -15,11 +15,13 @@ const button = cva(styles.module, {
   },
 });
 
-type Props = PropsWithChildren<VariantProps<typeof button>>;
+type Props = PropsWithChildren &
+  HTMLAttributes<HTMLButtonElement> &
+  VariantProps<typeof button>;
 
-export const Button = ({ color, children }: Props) => {
+export const Button = ({ color, children, ...props }: Props) => {
   return (
-    <button type="button" className={button({ color })}>
+    <button type="button" className={button({ color })} {...props}>
       {children}
     </button>
   );
