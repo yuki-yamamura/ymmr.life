@@ -1,6 +1,9 @@
+import { Tag } from "@/features/tags/types";
+import type { MicroCMSImage, MicroCMSListContent } from "microcms-js-sdk";
+
 export type Post = {
-  userId: number;
-  id: number;
   title: string;
   body: string;
-};
+  tags: Tag[];
+  thumbnail: MicroCMSImage;
+} & MicroCMSListContent;

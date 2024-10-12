@@ -1,8 +1,10 @@
 import type { Post } from "@/features/posts/types";
+import { client } from "@/lib/microcms/client";
 
 export const getPosts = async (): Promise<Post[]> => {
-  const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const posts = (await response.json()) as Post[];
+  const posts = await client.getAllContents<Post>({
+    endpoint: "tech",
+  });
 
   return posts;
 };

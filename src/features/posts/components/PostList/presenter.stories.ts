@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Component } from ".";
+import { PostList } from "./presenter";
 import { fakePosts } from "@/features/posts/api/__mock__/fakeData";
 
 const meta = {
-  component: Component,
-} satisfies Meta<typeof Component>;
+  component: PostList,
+} satisfies Meta<typeof PostList>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

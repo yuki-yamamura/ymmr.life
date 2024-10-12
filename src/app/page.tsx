@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { PostList } from "@/features/posts/components/PostList";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
           priority
         />
         <div>Hello, World!</div>
+        <PostList />
 
         <div className={styles.ctas}>
           <a
