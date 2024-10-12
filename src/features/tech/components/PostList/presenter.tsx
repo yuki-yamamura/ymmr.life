@@ -1,9 +1,9 @@
-import type { Post } from "@/features/posts/types";
+import type { TechPost } from "@/features/tech/types";
 
 import styles from "./presenter.module.scss";
 
 type Props = {
-  posts: Post[];
+  posts: TechPost[];
 };
 
 export const PostList = ({ posts }: Props) => (

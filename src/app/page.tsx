@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { PostList } from "@/features/posts/components/PostList";
+import { PostList } from "@/features/tech/components/PostList";
 
 export default function Home() {
   return (

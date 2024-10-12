@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { PostList } from "./presenter";
-import { fakePosts } from "@/features/posts/api/__mock__/fakeData";
+import { fakePosts } from "@/features/tech/api/__mock__/fakeData";
 
 const meta = {
   component: PostList,

@@ -1,6 +1,6 @@
-import { Post } from "@/features/posts/types";
+import { TechPost } from "@/features/tech/types";
 
-export const fakePosts: Post[] = [
+export const fakePosts: TechPost[] = [
   {
     id: "gi2b219kd16",
     createdAt: "2024-10-12T03:55:22.752Z",
