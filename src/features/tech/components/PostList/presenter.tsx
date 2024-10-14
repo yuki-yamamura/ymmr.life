@@ -1,7 +1,7 @@
 import type { TechPost } from "@/features/tech/types";
+import { PostItem } from "./PostItem";
 
 import styles from "./presenter.module.scss";
-import { PostItem } from "./PostItem";
 
 type Props = {
   posts: TechPost[];
