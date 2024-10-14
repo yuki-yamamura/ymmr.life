@@ -1,3 +1,9 @@
+import { PostList } from "@/features/tech/components/PostList";
+
 export default function Home() {
-  return <div>Hello, S3 + CloudFront!</div>;
+  return (
+    <div>
+      <PostList />
+    </div>
+  );
 }
