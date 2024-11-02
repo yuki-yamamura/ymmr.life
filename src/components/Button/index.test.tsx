@@ -3,11 +3,11 @@ import { Button } from ".";
 import userEvent from "@testing-library/user-event";
 
 describe("Button", () => {
-  test("call a function on click", async () => {
+  test("call a function on press", async () => {
     const mockFn = vi.fn();
     const user = userEvent.setup();
     render(
-      <Button type="button" onClick={mockFn}>
+      <Button type="button" onPress={mockFn}>
         click me
       </Button>
     );

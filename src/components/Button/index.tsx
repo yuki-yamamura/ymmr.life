@@ -1,6 +1,7 @@
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
-import type { ComponentPropsWithoutRef, PropsWithChildren } from "react";
+import { Button as ReactAriaButton } from "react-aria-components";
+import type { ButtonProps } from "react-aria-components";
 
 import styles from "./index.module.scss";
 
@@ -13,12 +14,10 @@ const variants = cva(styles.module, {
   },
 });
 
-type Props = ComponentPropsWithoutRef<"button"> &
-  PropsWithChildren &
-  VariantProps<typeof variants>;
+type Props = ButtonProps & VariantProps<typeof variants>;
 
 export const Button = ({ color, children, ...props }: Props) => (
-  <button className={variants({ color })} {...props}>
+  <ReactAriaButton className={variants({ color })} {...props}>
     {children}
-  </button>
+  </ReactAriaButton>
 );
