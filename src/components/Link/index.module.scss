@@ -1,0 +1,7 @@
+.module {
+  &[data-hovered="true"] {
+    color: red;
+    text-decoration: underline;
+    text-decoration-color: blueviolet;
+  }
+}
