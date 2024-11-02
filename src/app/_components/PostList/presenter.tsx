@@ -1,16 +1,16 @@
-import type { TechPost } from "@/features/tech/types";
-import { PostItem } from "./PostItem";
+import { PostItem } from "../PostItem";
+import { ComponentPropsWithoutRef } from "react";
 
 import styles from "./presenter.module.scss";
 
 type Props = {
-  posts: TechPost[];
+  posts: ComponentPropsWithoutRef<typeof PostItem>["post"][];
 };
 
 export const PostList = ({ posts }: Props) => (
   <ul className={styles.module}>
-    {posts.map((post) => (
-      <li key={post.id}>
+    {posts.map((post, index) => (
+      <li key={index}>
         <PostItem post={post} />
       </li>
     ))}

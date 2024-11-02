@@ -1,4 +1,4 @@
-import { PostList } from "@/features/tech/components/PostList";
+import { PostList } from "@/app/_components/PostList";
 
 export default function Home() {
   return (

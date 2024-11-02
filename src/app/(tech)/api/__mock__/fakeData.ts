@@ -1,4 +1,4 @@
-import { TechPost } from "@/features/tech/types";
+import { TechPost } from "@/app/(tech)/types";
 
 export const fakePosts: TechPost[] = [
   {

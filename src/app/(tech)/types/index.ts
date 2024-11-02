@@ -1,4 +1,4 @@
-import { Tag } from "@/features/tags/types";
+import { Tag } from "@/app/(tags)/types";
 import type { MicroCMSImage, MicroCMSListContent } from "microcms-js-sdk";
 
 export type TechPost = {

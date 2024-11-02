@@ -1,15 +1,15 @@
-import { getPosts } from ".";
+import { getTechPosts } from ".";
 import { fakePosts } from "./__mock__/fakeData";
 import { server } from "@/mocks/node";
 import { handler } from "./__mock__/msw";
 
-describe("getPosts", () => {
+describe("getTechPosts", () => {
   beforeEach(() => {
     server.use(handler);
   });
 
   test("fetches posts from the API", async () => {
-    const posts = await getPosts();
+    const posts = await getTechPosts();
 
     expect(posts).toEqual(fakePosts);
   });
