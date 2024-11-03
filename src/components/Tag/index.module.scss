@@ -1,0 +1,23 @@
+@use "@/styles/variables" as *;
+
+.module {
+  font-size: 0.75rem;
+  color: $text-main;
+  border: 1px solid $tag-border-color;
+  border-radius: 4px;
+  padding: 2px 8px;
+  outline: none;
+  cursor: default;
+  display: flex;
+  align-items: center;
+  transition: border-color 200ms;
+
+  &[data-hovered] {
+    border-color: var($tag-border-color-hover);
+  }
+
+  &[data-focus-visible] {
+    outline: 2px solid var(--focus-ring-color);
+    outline-offset: 2px;
+  }
+}

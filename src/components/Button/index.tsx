@@ -1,23 +1,20 @@
-import { cva } from "class-variance-authority";
-import type { VariantProps } from "class-variance-authority";
-import { Button as ReactAriaButton } from "react-aria-components";
-import type { ButtonProps } from "react-aria-components";
+"use client";
+
+import { type AriaButtonOptions, useButton } from "@react-aria/button";
+import { PropsWithChildren, useRef } from "react";
 
 import styles from "./index.module.scss";
 
-const variants = cva(styles.module, {
-  variants: {
-    color: {
-      primary: styles.primary,
-      secondary: styles.secondary,
-    },
-  },
-});
+type Props = AriaButtonOptions<"button"> & PropsWithChildren;
 
-type Props = ButtonProps & VariantProps<typeof variants>;
+export const Button = (props: Props) => {
+  const ref = useRef<HTMLButtonElement>(null);
+  const { buttonProps } = useButton(props, ref);
+  const { children } = props;
 
-export const Button = ({ color, children, ...props }: Props) => (
-  <ReactAriaButton className={variants({ color })} {...props}>
-    {children}
-  </ReactAriaButton>
-);
+  return (
+    <button {...buttonProps} ref={ref} className={styles.module}>
+      {children}
+    </button>
+  );
+};
