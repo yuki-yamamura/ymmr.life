@@ -19,6 +19,7 @@
     "microcms-js-sdk": "^3.1.2",
     "next": "15.0.2",
     "react": "19.0.0-rc-02c0e824-20241028",
+    "react-aria": "^3.35.1",
     "react-aria-components": "^1.4.1",
     "react-dom": "19.0.0-rc-02c0e824-20241028",
     "rehype-pretty-code": "^0.14.0",
