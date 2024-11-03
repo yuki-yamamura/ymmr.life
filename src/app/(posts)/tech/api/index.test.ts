@@ -7,6 +7,9 @@ describe("getTechPosts", () => {
   beforeEach(() => {
     server.use(handler);
   });
+  afterEach(() => {
+    server.resetHandlers();
+  });
 
   test("fetches posts from the API", async () => {
     const posts = await getTechPosts();

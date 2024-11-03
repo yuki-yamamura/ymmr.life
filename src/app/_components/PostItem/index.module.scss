@@ -1,5 +1,25 @@
+@use "@/styles/variables" as *;
+
+.date {
+  font-size: 0.875rem;
+}
+
 .title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: cadetblue;
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding-block-start: 4px;
+}
+
+.rule {
+  margin-block: 8px;
+  border-top: solid 0.5px $rule-border-color;
+}
+
+.tags {
+  display: flex;
+  gap: 16px;
+}
+
+.tag {
+  font-size: 0.875rem;
 }

@@ -1,0 +1,22 @@
+.logo {
+  padding-block-end: 32px;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  padding-block-end: 48px;
+}
+
+.buttons {
+  display: flex;
+  gap: 80px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-block-start: 40px;
+}
+
+.button {
+  width: 250px;
+}

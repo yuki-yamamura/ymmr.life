@@ -10,7 +10,7 @@ type Props = {
 export const PostList = ({ posts }: Props) => (
   <ul className={styles.module}>
     {posts.map((post, index) => (
-      <li key={index}>
+      <li key={index} className={styles.item}>
         <PostItem post={post} />
       </li>
     ))}

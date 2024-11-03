@@ -1,4 +1,9 @@
 .module {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.item {
+  list-style: none;
 }

@@ -1,0 +1,66 @@
+@use "@/styles/variables.scss" as *;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  row-gap: 24px;
+  margin-bottom: 80px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  // column-gap: 64px;
+  align-items: center;
+  width: 100%;
+}
+
+.image {
+  height: 120px;
+  width: 120px;
+}
+
+.tagGroup {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  padding-inline: 24px;
+
+  a {
+    color: $text-accent;
+    text-decoration: underline;
+  }
+
+  strong {
+    font-weight: 500;
+  }
+
+  p {
+    & code {
+      color: $text-accent;
+
+      &::before {
+        content: "`";
+      }
+      &::after {
+        content: "`";
+      }
+    }
+  }
+}

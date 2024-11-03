@@ -1,4 +1,4 @@
-import type { TechPost } from "@/app/(tech)/types";
+import type { TechPost } from "@/app/(posts)/tech/types";
 import { client } from "@/lib/microcms/client";
 import { GetAllContentRequest } from "microcms-js-sdk";
 
