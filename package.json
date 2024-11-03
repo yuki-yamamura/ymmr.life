@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",
+    "dayjs": "^1.11.13",
     "dotenv": "^16.4.5",
     "microcms-js-sdk": "^3.1.2",
     "next": "15.0.2",
