@@ -12,6 +12,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@remixicon/react": "^4.5.0",
     "class-variance-authority": "^0.7.0",
     "dayjs": "^1.11.13",
     "dotenv": "^16.4.5",
